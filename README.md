@@ -92,7 +92,9 @@ To launch the borderless on-screen HUD silently (zero console window):
 
 *(Or run via terminal: `python electro_hud.py`)*
 
-#### HUD Controls
+#### HUD Controls & Features
+* **📈 Rolling History Graph (60s):** Real-time animated wattage curve plotting your power draw over the last 60 seconds with live `Peak`, `Avg`, and `Min` statistics. Features a dashed red **900W Inverter Limit line** to instantly see your headroom.
+* **Toggle Graph View:** Click the `📈` button in the header to fold or expand the history graph on demand.
 * **Drag & Drop:** Click and hold anywhere to reposition the HUD anywhere on your monitor.
 * **Compact / Pill Mode:** Double-click the header (or click `⎯`) to collapse the HUD into an ultra-compact status pill (`⚡ ELECTRO: 420W | GPU: 218W | CPU: 85W | Inv: 47%`). Double-click again to expand.
 * **Monitor Toggle:** Click buttons on the monitor card to switch between **Display (45W)**, **+ USB-PD (135W)**, or **Off (0W)**.
