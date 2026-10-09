@@ -50,6 +50,5 @@ Electro is calibrated for the user's primary rig:
 * `electro_hud.py`: Main desktop overlay GUI (Tkinter borderless topmost window).
 * `measure_power.py`: Headless telemetry recorder (writes to `power_session_log.csv`).
 * `analyze_power.py`: Statistical analyzer, percentile calculator, and UPS sizing engine.
-* `start_hud.vbs`: **Primary silent launcher** (uses `WScript.Shell.Run` with style `0` for zero console window flash).
-* `start_hud.bat`: Secondary/optional batch launcher for command-line users.
+* `electro_hud.vbs`: **Primary silent launcher** (uses `WScript.Shell.Run` with style `0` for zero console window flash).
 * `assets/logo.png` & `assets/logo.svg`: Branding assets.

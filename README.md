@@ -88,7 +88,7 @@ Tested and calibrated against a flagship enthusiast gaming workstation:
 
 ### 1. Launch the Desktop HUD
 To launch the borderless on-screen HUD silently (zero console window):
-* Double-click **`start_hud.vbs`**
+* Double-click **`electro_hud.vbs`**
 
 *(Or run via terminal: `python electro_hud.py`)*
 
@@ -113,12 +113,11 @@ Parses internal logs and auto-detects any HWiNFO `.csv` logs in the workspace.
 
 ---
 
-## ❓ FAQ: Is `start_hud.bat` necessary after `start_hud.vbs`?
+## ❓ Why `electro_hud.vbs` instead of `.bat`?
 
-**No, `start_hud.bat` is not necessary.**
 * When Windows runs a `.bat` file, the command prompt engine (`cmd.exe`) must instantiate a console handle, creating a brief black window flash before launching `pythonw`.
-* In contrast, **`start_hud.vbs`** invokes the Windows Script Host (`WScript.Shell.Run`) with window style `0` (hidden). This launches `pythonw` with **zero console creation and zero visual flicker**.
-* `start_hud.vbs` is the definitive desktop launcher. `start_hud.bat` is kept only as an optional terminal alternative.
+* In contrast, **`electro_hud.vbs`** invokes the Windows Script Host (`WScript.Shell.Run`) with window style `0` (hidden). This launches `pythonw` with **zero console creation and zero visual flicker**.
+* `electro_hud.vbs` is the definitive, clean desktop launcher.
 
 ---
 
