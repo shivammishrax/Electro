@@ -91,7 +91,7 @@ class ElectroHUD:
         self.gpu_vram = 0.0
         self.cpu_util = 0.0
         self.cpu_watts = 35.0
-        self.platform_watts = 75.0
+        self.platform_watts = 95.0 # Calibrated for 10 Fans + AIO Pump + 64GB DDR5 + X870E + 5 Drives
         self.monitor_watts = 45.0  # BenQ PD2706U 45W
         self.inverter_capacity = 900.0 # MaxiLion 1500 (900W)
 
@@ -231,14 +231,14 @@ class ElectroHUD:
         self.lbl_cpu_stats = tk.Label(cpu_card, text="Util: --%", font=("Segoe UI", 6), fg="#8b949e", bg="#101624")
         self.lbl_cpu_stats.pack(anchor="w")
 
-        # Platform Circuitry Card (Motherboard, RAM, SSDs, Cooling)
+        # Platform Circuitry Card (Motherboard, RAM, SSDs, 10 Fans, AIO Pump)
         platform_box = tk.Frame(self.expanded_frame, bg="#101624", highlightbackground="#1f293d", highlightthickness=1, padx=6, pady=2)
         platform_box.pack(fill=tk.X, pady=(0, 5))
         
-        lbl_plat_title = tk.Label(platform_box, text="⚙️ Platform Circuitry: ~75 W", font=("Segoe UI", 7, "bold"), fg="#e3b341", bg="#101624")
+        lbl_plat_title = tk.Label(platform_box, text="⚙️ Platform Circuitry: ~95 W", font=("Segoe UI", 7, "bold"), fg="#e3b341", bg="#101624")
         lbl_plat_title.pack(anchor="w")
         lbl_plat_detail = tk.Label(
-            platform_box, text="64GB DDR5 (~12W) • X870E Board (~25W) • SSDs (~12W) • AIO/Fans (~26W)",
+            platform_box, text="10 Fans & AIO (~45W) • 64GB DDR5 (~12W) • X870E Board (~25W) • 5 Drives (~13W)",
             font=("Segoe UI", 6), fg="#8b949e", bg="#101624"
         )
         lbl_plat_detail.pack(anchor="w")

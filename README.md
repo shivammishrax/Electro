@@ -38,7 +38,7 @@ Tested and calibrated against a flagship enthusiast gaming workstation:
 * **Motherboard:** MSI MPG X870E EDGE TI WIFI (Dual Promontory 21 chipsets, PCIe 5.0, Wi-Fi 7)
 * **Memory:** 64 GB DDR5 (2 × 32 GB Kingston with on-die PMIC)
 * **Storage:** Samsung 990 PRO 2 TB NVMe + WD NVMe + Secondary Drives
-* **Cooling:** AIO Liquid Cooler + Multi-fan Chassis (~25W continuous)
+* **Cooling & Fans:** 10 × ARGB Chassis/Radiator Fans + AIO Liquid Cooler Pump (~45W continuous under load)
 * **Display:** BenQ PD2706U (27" 4K UHD Designer Display with 90W USB-C Power Delivery)
 
 ---
@@ -135,8 +135,8 @@ If you are an AI coding assistant (Antigravity, Cursor, Windsurf, Copilot, Codex
    * For the AMD Ryzen 9 9950X3D, power curve scaling is:
      $$\text{Watts} = \min(32.0 + (\text{CPU\_util} / 100.0) \times 130.0, 162.0)$$
 3. **Platform Circuitry Constant:**
-   * Non-CPU, non-GPU platform load (MSI X870E motherboard dual chipsets, 64GB DDR5 with PMIC, Samsung 990 Pro + 4 storage drives, AIO pump, and chassis fans) is calibrated at **75.0 W DC**.
+   * Non-CPU, non-GPU platform load (10 ARGB fans, AIO pump, MSI X870E motherboard dual chipsets, 64GB DDR5 with PMIC, Samsung 990 Pro + 4 storage drives) is calibrated at **95.0 W DC**.
 4. **Wall Power Equation:**
-   $$\text{Wall AC} = \frac{\text{GPU\_watts} + \text{CPU\_watts} + 75.0}{0.90} + \text{Monitor\_watts}$$
+   $$\text{Wall AC} = \frac{\text{GPU\_watts} + \text{CPU\_watts} + 95.0}{0.90} + \text{Monitor\_watts}$$
 5. **Path Resolution:**
    * All scripts use dynamic script directory resolution (`os.path.dirname(os.path.abspath(__file__))`) so they remain fully relocatable.

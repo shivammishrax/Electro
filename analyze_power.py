@@ -111,8 +111,8 @@ def analyze():
             final_gpu_avg = hwinfo_gpu_avg if hwinfo_gpu_avg else avg_gpu
             final_gpu_peak = hwinfo_gpu_peak if hwinfo_gpu_peak else peak_gpu
 
-            # Platform Circuitry (MSI X870E, 64GB DDR5, NVMe/SSDs, AIO Pump, Fans, RGB, USB)
-            rest_system_dc = 75.0  # Watts
+            # Platform Circuitry (MSI X870E, 64GB DDR5, 5 SSDs/HDDs, 10 Fans, AIO Pump, RGB, USB)
+            rest_system_dc = 95.0  # Watts (calibrated for 10 fans + AIO pump + 64GB DDR5 + X870E)
 
             dc_avg = final_gpu_avg + final_cpu_avg + rest_system_dc
             dc_peak = final_gpu_peak + final_cpu_peak + rest_system_dc

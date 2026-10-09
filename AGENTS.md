@@ -34,7 +34,7 @@ Electro is calibrated for the user's primary rig:
 
 1. **Internal DC Component Draw:**
    $$\text{DC}_{\text{total}} = \text{GPU\_Watts} + \text{CPU\_Watts} + \text{Platform\_Watts}$$
-   * `Platform_Watts` is fixed at **75.0 W** (covers X870E chipset, DDR5 PMICs, NVMe drives, AIO pump, fans, and RGB).
+   * `Platform_Watts` is calibrated at **95.0 W** (covers 10 ARGB chassis/radiator fans, AIO liquid cooler pump, MSI X870E dual-chipset motherboard, 64GB DDR5 with PMIC, 5 storage drives, and USB peripherals).
 2. **Wall AC Power Draw:**
    $$\text{Wall}_{\text{AC}} = \frac{\text{DC}_{\text{total}}}{0.90} + \text{Monitor\_Watts}$$
    * `0.90` represents 90% 80+ Gold / Platinum PSU efficiency.
