@@ -210,11 +210,11 @@ class ElectroHUD:
         self.graph_canvas.pack(fill=tk.X, pady=(2, 2))
 
         # Metrics Grid (GPU & CPU)
-        grid_frame = tk.Frame(self.expanded_frame, bg="#0b0f19")
-        grid_frame.pack(fill=tk.X, pady=(0, 5))
+        self.grid_frame = tk.Frame(self.expanded_frame, bg="#0b0f19")
+        self.grid_frame.pack(fill=tk.X, pady=(0, 5))
 
         # GPU Card
-        gpu_card = tk.Frame(grid_frame, bg="#101624", highlightbackground="#1f293d", highlightthickness=1, padx=6, pady=3)
+        gpu_card = tk.Frame(self.grid_frame, bg="#101624", highlightbackground="#1f293d", highlightthickness=1, padx=6, pady=3)
         gpu_card.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 3))
         tk.Label(gpu_card, text="🎮 RTX 5080", font=("Segoe UI", 7, "bold"), fg="#00f2fe", bg="#101624").pack(anchor="w")
         self.lbl_gpu_power = tk.Label(gpu_card, text="-- W", font=("Segoe UI", 11, "bold"), fg="#ffffff", bg="#101624")
@@ -223,7 +223,7 @@ class ElectroHUD:
         self.lbl_gpu_stats.pack(anchor="w")
 
         # CPU Card
-        cpu_card = tk.Frame(grid_frame, bg="#101624", highlightbackground="#1f293d", highlightthickness=1, padx=6, pady=3)
+        cpu_card = tk.Frame(self.grid_frame, bg="#101624", highlightbackground="#1f293d", highlightthickness=1, padx=6, pady=3)
         cpu_card.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True, padx=(3, 0))
         tk.Label(cpu_card, text="🧠 Ryzen 9 9950X3D", font=("Segoe UI", 7, "bold"), fg="#ff7b72", bg="#101624").pack(anchor="w")
         self.lbl_cpu_power = tk.Label(cpu_card, text="-- W", font=("Segoe UI", 11, "bold"), fg="#ffffff", bg="#101624")
@@ -308,17 +308,20 @@ class ElectroHUD:
 
     def toggle_graph_view(self):
         self.show_graph = not self.show_graph
-        if self.show_graph:
-            self.graph_card.pack(fill=tk.X, pady=(0, 6), before=self.expanded_frame.winfo_children()[1])
-            self.btn_toggle_graph.config(fg="#00f2fe")
-            self.normal_h = 475
-        else:
-            self.graph_card.pack_forget()
-            self.btn_toggle_graph.config(fg="#6e7681")
-            self.normal_h = 375
-        
-        if not self.is_compact:
-            self.root.geometry(f"320x{self.normal_h}+{self.root.winfo_x()}+{self.root.winfo_y()}")
+        try:
+            if self.show_graph:
+                self.graph_card.pack(fill=tk.X, pady=(0, 6), before=self.grid_frame)
+                self.btn_toggle_graph.config(fg="#00f2fe")
+                self.normal_h = 475
+            else:
+                self.graph_card.pack_forget()
+                self.btn_toggle_graph.config(fg="#6e7681")
+                self.normal_h = 375
+            
+            if not self.is_compact:
+                self.root.geometry(f"320x{self.normal_h}+{self.root.winfo_x()}+{self.root.winfo_y()}")
+        except Exception as e:
+            pass
 
     def toggle_view_mode(self):
         self.is_compact = not self.is_compact
